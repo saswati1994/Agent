@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Register here</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/main.css}">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <a class="navbar-brand" th:href="@{/index}">Registration</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+            <a class="nav-item nav-link active" th:href="@{/index}">Home <span class="sr-only">(current)</span></a>
+            <a th:href="@{/login}" class="nav-item nav-link">Login</a>
+            <a class="nav-item nav-link" href="#">Contact us</a>
+
+        </div>
+    </div>
+</nav>
+<div class="container">
+    <div class="row">
+        <div class="col-md-2 "></div>
+        <div class="col-md-8 ">
+            <h1>Registration Form</h1>
+            <form th:action="@{/registration}" th:object="${agent}" method="post">
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="fname">First Name</label>
+                        <input type="fname" class="form-control" required id="fname" name="firstName" placeholder="Fname">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="lname">Last Name</label>
+                        <input type="lname" class="form-control" required id="lname" name="lastName" placeholder="LName">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" required id="email"  name="email" placeholder="Email">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="phoneno">PhoneNo</label>
+                        <input type="tel" class="form-control"
+                               required id="phoneno" name="phoneNo" placeholder="PhoneNo">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputAddress">Address</label>
+                    <input type="text" class="form-control" required id="inputAddress" name="inputAddress" placeholder="1234 Main St">
+                </div>
+                <div class="form-group">
+                    <label for="inputAddress2">Address 2</label>
+                    <input type="text" class="form-control" id="inputAddress2" name="inputAddress2" placeholder="Apartment, studio, or floor">
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="username">UserName</label>
+                        <input type="username" class="form-control" required id="username" name="username" placeholder="UserName">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control" required id="password" name="password" placeholder="Password">
+                    </div>
+                </div>
+
+                <!-- <a th:href="@{/registrations}">Next  </a>-->
+                <button type="submit" class="btn btn-primary">Register</button>
+
+            </form>
+        </div>
+        <div class="col-md-2 "></div>
+    </div>
+</div>
+</body>
+</html>
